@@ -41,7 +41,7 @@ class ClienteController{
 
         database.where({id:id}).update({id:id, nome: nome, cpf: cpf, dt_nascimento: dt_nascimento, dt_cadastro: dt_cadastro, renda_familiar:renda_familiar})
             .table("clientes").then(cliente=>{
-            response.json({message: "Cliente editado com sucesso!"})
+            response.json({message: "Cliente editado com sucesso!", code:'ok'})
 
         }).catch(error=>{
             if(error.code == 'ER_DUP_ENTRY'){
