@@ -19,7 +19,7 @@ class ClienteController{
     }
 
     listarClientes(request, response){
-        database.select("id", "nome", "renda_familiar").table("clientes").then(clientes=>{
+        database.select("id", "nome", "renda_familiar", "dt_cadastro").table("clientes").then(clientes=>{
             response.json(clientes)
         }).catch(error=>{
             response.json({message: "Erro na API.", code:"erro"})
